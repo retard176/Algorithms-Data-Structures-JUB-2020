@@ -1,0 +1,23 @@
+# Script Written by Harit Krishan for ADS Spring 2020
+# Assignment 4
+
+
+f(x) = a*x**2 + b*x + c
+fit f(x) 'bcs-1.dat' using 1:2 via a, b, c
+g(x) = d*x**2 + e*x + f
+fit g(x) 'acs-1.dat' using 1:2 via d, e, f
+h(x) = g*x**2 + h*x + i
+fit h(x) 'wcs-1.dat' using 1:2 via g, h, i
+
+
+set title "Run-Time for k = size - 1"
+set xrange [0:1000]
+set yrange [0:0.5]
+set key at 400,0.425
+
+
+plot 'bcs-1.dat' using 1:2 title 'Best-Case', f(x) title 'Best-Case Regression' ls 1, \
+ 'acs-1.dat' using 1:2 title 'Average-Case', g(x) title 'Average-Case Regression' ls 2, \
+ 'wcs-1.dat' using 1:2 title 'Worst-Case', h(x) title 'Worst-Case Regression' ls 4
+
+pause -1 "Hit any key to continue"

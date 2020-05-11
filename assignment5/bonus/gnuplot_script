@@ -1,0 +1,18 @@
+plot 'bottom_up.dat' title "bottom-up"
+replot 'closed.dat' title "closed form"
+replot 'matrix.dat' title "matrix mathod"
+replot 'recur.dat' title "naive"
+
+f(x) = m*x + b
+fit f(x) 'bottom_up.dat' using 1:2 via m,b
+replot f(x) title 'bottom-up reg.'
+
+g(x) = a*x + c
+fit g(x) 'closed.dat' using 1:2 via a, c
+replot g(x) title 'closed reg.'
+
+h(x) = d*x + e
+fit h(x) 'matrix.dat' using 1:2 via d, e
+replot h(x) title 'matrix reg.'
+
+pause -1 "Hit any key to continue"
