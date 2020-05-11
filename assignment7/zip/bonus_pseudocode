@@ -1,0 +1,30 @@
+
+EUCLIDEAN DISTANCE MEASUREMENT BETWEEN 2 2D POINTS
+
+for i = 0 to n:
+	dist[n] = sqrt((coord_x[n] - origin) ** 2 + (coord_y[n] - origin) ** 2);
+
+selection_sort(dist, coord_x, coord_y);
+
+/************************************************************/
+
+define selection_sort(dist, coord_x, coord_y) {
+	for i = 0 to n:
+		min = dist[i];
+		pos = i;
+
+		for j=0 to n:
+			if min > dist[j]:
+				min = dist[j];
+				post = j;
+
+		swap(min, dist[i]);
+		swap(coord_x[i], coord_x[pos]);
+		swap(coord_y[i], coord_y[pos]);
+
+}
+
+
+
+
+

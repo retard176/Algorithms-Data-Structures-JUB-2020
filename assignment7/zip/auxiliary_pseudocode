@@ -1,0 +1,13 @@
+define some_function(arr, a, b) {
+	m = max(arr);
+	count[m+1];
+	
+	for i to arr.length:			// count no. of appearances
+		count[arr[i]]++;
+
+	for i in 1:m:				// compute cumulative frequency
+		count[i] += count[i-1];
+
+	return count[b] - count[a-1];		// size of auxiliary array
+
+}
